@@ -1,14 +1,13 @@
-# This is a sample Python script.
+# Prompt user for input
+kwh = int(input("Enter the KW hours used: "))
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+# Calculate total cost based on usage threshold
+if kwh <= 1000:
+    total_cost = kwh * 0.07633
+else:
+    first_1000_cost = 1000 * 0.07633
+    over_1000_cost = (kwh - 1000) * 0.09259
+    total_cost = first_1000_cost + over_1000_cost
 
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+# Print output matching expected format
+print(f"Amount owed is ${total_cost}")
